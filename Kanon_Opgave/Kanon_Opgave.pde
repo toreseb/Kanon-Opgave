@@ -1,6 +1,7 @@
 import processing.sound.*;
 planet myPlanet;
 player theP;
+balls ball;
 
 void setup() {
   loadSounds();
@@ -18,6 +19,7 @@ void draw(){
   clear();
   
   theP.checkShoot();
+  balls.bTimer();
 
 
   animations.runAnimations();

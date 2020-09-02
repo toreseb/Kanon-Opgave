@@ -2,6 +2,7 @@ class player extends objects {
   float angle;
   int cLength = 30;
   int cWidth = 8;
+  int timerC;
 
 
   player() {
@@ -22,8 +23,12 @@ class player extends objects {
 
   void checkShoot() {
     if (mousePressed) {
+      
       shootCanon();
+      ballList.add(new balls());
+      
     }
+    
   }
   
 
