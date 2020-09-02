@@ -6,12 +6,14 @@ void setup() {
   loadSounds();
   size(1920, 1080);
   rectMode(CENTER);
+  imageMode(CENTER);
   theP = new player();
 }
 
 
 
-void draw() {
+
+void draw(){
   clear();
   theP.checkShoot();
 
