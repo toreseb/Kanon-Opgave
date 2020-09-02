@@ -11,7 +11,7 @@ void setup() {
   imageMode(CENTER);
   theP = new player();
   score = new score();
-  makePlanets(4);
+  makePlanets(10);
 }
 
 

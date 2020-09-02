@@ -1,6 +1,6 @@
 class balls extends objects {
 
-  int size = 50;
+  int size = 100;
 
 
   balls(float energy) {
@@ -9,6 +9,7 @@ class balls extends objects {
     vel.x = energy/10*cos(theP.angle);
     vel.y = energy/10*sin(theP.angle);
     objectList.add(this);
+    this.cAnimation = new animation("kugle", "png", 4, 5, 0, 0, size, size);
   }
 
 
@@ -17,7 +18,10 @@ class balls extends objects {
     acc.mult(0);
     pos.add(vel);
 
-    fill(255, 255, 255, 255);
-    ellipse(pos.x, pos.y, size, size);
+    pushMatrix();
+    translate(pos.x, pos.y);
+    rotate(vel.heading());
+    cAnimation.animationStep();
+    popMatrix();
   }
 }
