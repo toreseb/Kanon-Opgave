@@ -25,6 +25,7 @@ class player extends objects {
       shootCanon();
     }
   }
+  
 
 
   void shootCanon() {

@@ -1,5 +1,5 @@
 import processing.sound.*;
-
+planet myPlanet;
 player theP;
 
 void setup() {
@@ -8,6 +8,7 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   theP = new player();
+  myPlanet = new planet();
 }
 
 

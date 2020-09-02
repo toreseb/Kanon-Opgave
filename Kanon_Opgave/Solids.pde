@@ -1,1 +1,3 @@
-
+class solids extends objects {
+  
+}
