@@ -2,7 +2,7 @@ class player extends objects {
   float angle;
   int cLength = 30;
   int cWidth = 8;
-  PVector mPos = new PVector();
+
 
   player() {
     pos.x = 50;
@@ -12,15 +12,14 @@ class player extends objects {
   }
 
   void drawCanon() {
-
-
-    rect(pos.x, pos.y, cLength, cWidth);
+  
+  
+    
   }
   void rotation() {
+    
     translate(pos.x, pos.y);
-    mPos.x = mouseX;
-    mPos.y = mouseY;
-    angle = PVector.angleBetween(mPos, pos);
+    angle = atan2(mouseY-pos.y,mouseX-pos.x);
     rotate(angle);
     line(0, 0, mouseX, mouseY);
   }
