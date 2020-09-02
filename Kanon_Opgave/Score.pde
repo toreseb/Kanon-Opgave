@@ -21,7 +21,7 @@ class score extends objects {
     text(timer + " seconds left",pos.x,pos.y*2);
   }
   void countdown(){
-    timer = timeAmount - frameCount;
+    timer = timeAmount - frameCount/60;
     if (timer <= 0){
       timer = 0; 
       textSize(100);
