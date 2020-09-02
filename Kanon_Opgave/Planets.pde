@@ -11,9 +11,20 @@ class planet extends solids {
 
 
   void drawSelf() {
+    for (balls i : ballList) {
+      if (PVector.dist(i.pos, pos) < 2.5*size/*-i.size/2*/) {
+        float angle = atan2(i.pos.y-pos.y,i.pos.x-pos.x);
+        PVector force = new PVector(-0.1,0);
+        force.rotate(angle);
+        i.acc.add(force);
+      }
+    }
+
+
+
     cAnimation.animationStep();
 
     fill(120, 120, 255, 100);
-    circle(pos.x, pos.y, 5*size);
+    ellipse(pos.x, pos.y, 5*size, 5*size);
   }
 }

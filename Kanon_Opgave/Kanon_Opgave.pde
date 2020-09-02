@@ -19,8 +19,5 @@ void draw(){
   clear();
   
   theP.checkShoot();
-  balls.bTimer();
-
-
   animations.runAnimations();
 }
