@@ -11,5 +11,5 @@ void draw(){
   
   
   
-  
+  animations.runAnimations();
 }
