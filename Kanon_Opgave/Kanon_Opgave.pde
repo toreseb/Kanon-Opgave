@@ -1,6 +1,7 @@
 import processing.sound.*;
 
 player theP;
+balls ball;
 
 void setup() {
   loadSounds();
@@ -8,6 +9,7 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   theP = new player();
+  
 }
 
 
@@ -17,6 +19,7 @@ void draw(){
   clear();
   
   theP.checkShoot();
+  balls.bTimer();
 
 
   animations.runAnimations();

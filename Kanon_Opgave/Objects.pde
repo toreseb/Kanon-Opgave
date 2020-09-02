@@ -1,5 +1,5 @@
 ArrayList<objects> objectList = new ArrayList<objects>();
-
+ArrayList<balls> ballList = new ArrayList<balls>();
 class objects {
   PVector pos = new PVector();
   PVector vel = new PVector();
