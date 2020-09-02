@@ -48,8 +48,8 @@ class animationEngine {
 
 
   void runAnimations() {
-    for (animation i : animationList) {
-      i.animationStep();
+    for (objects i : objectList) {
+      i.cAnimation.animationStep();
     }
     for (animation i : removeList) {
       removeList.remove(i);

@@ -8,6 +8,7 @@ class player extends objects{
   void drawCanon(){
     pos.x = 50;
     pos.y = height/2;
+    this.cAnimation = new animation("kanon","png",1,1,0,0,700,300);
     rect(pos.x,pos.y,cLength,cWidth);
   }
   void rotation(){
