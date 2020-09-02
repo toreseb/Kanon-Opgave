@@ -5,10 +5,16 @@ class player extends objects{
   PVector mPos = new PVector();
   
   
-  void drawCanon(){
+  player(){
     pos.x = 50;
     pos.y = height/2;
     this.cAnimation = new animation("kanon","png",1,1,0,0,700,300);
+    objectList.add(this);
+  }
+  
+  void drawCanon(){
+    
+    
     rect(pos.x,pos.y,cLength,cWidth);
   }
   void rotation(){
