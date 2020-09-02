@@ -37,10 +37,4 @@ class player extends objects {
       rect(pos.x+200, pos.y-200, shotEnergy*5, 20);
     }
   }
-
-
-
-  void shootCanon() {
-    canonShot.play();
-  }
 }

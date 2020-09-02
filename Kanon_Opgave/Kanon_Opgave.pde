@@ -3,15 +3,15 @@ import processing.sound.*;
 player theP;
 score score;
 
-
 void setup() {
+  loadBackdrop();
   loadSounds();
   size(1920, 1080);
   rectMode(CENTER);
   imageMode(CENTER);
   theP = new player();
   score = new score();
-  makePlanets(10);
+  makePlanets(20);
 }
 
 
@@ -19,6 +19,7 @@ void setup() {
 
 void draw() {
   clear();
+  displayBackdrop();
 
   animations.runAnimations();
 }

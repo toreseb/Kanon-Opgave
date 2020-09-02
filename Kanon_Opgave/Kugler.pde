@@ -10,6 +10,7 @@ class balls extends objects {
     vel.y = energy/10*sin(theP.angle);
     objectList.add(this);
     this.cAnimation = new animation("kugle", "png", 4, 5, 0, 0, size, size);
+    canonShot.play();
   }
 
 
