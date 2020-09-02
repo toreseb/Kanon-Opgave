@@ -19,8 +19,6 @@ void draw(){
   clear();
   
   theP.checkShoot();
-  
-
 
   animations.runAnimations();
 }
