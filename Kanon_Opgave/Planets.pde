@@ -1,3 +1,10 @@
+ArrayList<planet> planetList = new ArrayList<planet>();
+
+void makePlanets(int amount) {
+  for (int i= 0; i < amount; i ++) {
+    planetList.add(new planet());
+  }
+}
 class planet extends solids {
   float size;
 
@@ -19,12 +26,8 @@ class planet extends solids {
         i.acc.add(force);
       }
     }
-
-
-
-    cAnimation.animationStep();
-
     fill(120, 120, 255, 100);
     ellipse(pos.x, pos.y, 5*size, 5*size);
+    cAnimation.animationStep();
   }
 }
