@@ -15,7 +15,7 @@ class balls extends objects{
     pos.x += vel.x;
     pos.y += vel.y;
     
-
+    fill(255,255,255,255);
     ellipse(pos.x,pos.y,size,size);
   }
   void bTimer(){

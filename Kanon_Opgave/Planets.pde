@@ -14,6 +14,6 @@ class planet extends solids {
     cAnimation.animationStep();
 
     fill(120, 120, 255, 100);
-    circle(pos.x, pos.y, 5*size);
+    ellipse(pos.x, pos.y, 5*size,5*size);
   }
 }

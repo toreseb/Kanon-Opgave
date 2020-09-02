@@ -3,6 +3,7 @@ class player extends objects {
   int cLength = 30;
   int cWidth = 8;
   int timerC;
+  boolean press=false;
 
 
   player() {
@@ -23,9 +24,15 @@ class player extends objects {
 
   void checkShoot() {
     if (mousePressed) {
-      
-      shootCanon();
-      ballList.add(new balls());
+      if (!press){
+        
+        shootCanon();
+        ballList.add(new balls());
+        press = true;
+        println(press);
+      }
+    }else{
+      press = false;
       
     }
     
