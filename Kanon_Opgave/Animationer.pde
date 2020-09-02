@@ -30,7 +30,6 @@ class animation {
       getFrame = 0;
       cFrame = 0;
     }
-    println("Animating " + getFrame + " " + frameAmount);
     image(imageList.get(getFrame), position.x, position.y, size.x, size.y);
     cFrame ++;
   }
