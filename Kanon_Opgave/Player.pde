@@ -14,7 +14,11 @@ class player extends objects {
     imageMode(CENTER);
     pushMatrix();
     translate(pos.x, pos.y);
-
+    angle = atan2(mouseY-pos.y,mouseX-pos.x);
+    rotate(angle);
+    cAnimation.animationStep();
+    popMatrix();
+  }
 
   void checkShoot() {
     if (mousePressed) {

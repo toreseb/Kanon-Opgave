@@ -15,6 +15,7 @@ void setup() {
 
 void draw(){
   clear();
+  
   theP.checkShoot();
 
 
