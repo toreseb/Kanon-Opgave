@@ -11,18 +11,17 @@ class player extends objects {
     objectList.add(this);
   }
 
-  void drawCanon() {
+  void drawSelf() {
+    imageMode(CENTER);
+    pushMatrix();
 
-
-    rect(pos.x, pos.y, cLength, cWidth);
-  }
-  void rotation() {
     translate(pos.x, pos.y);
     mPos.x = mouseX;
     mPos.y = mouseY;
-    angle = PVector.angleBetween(mPos, pos);
+    angle = atan2(mouseY-pos.y,mouseX-pos.x);
     rotate(angle);
-    line(0, 0, mouseX, mouseY);
+    cAnimation.animationStep();
+    popMatrix();
   }
 
 
@@ -31,10 +30,9 @@ class player extends objects {
       shootCanon();
     }
   }
-  
-  
+
+
   void shootCanon() {
     canonShot.play();
-    
   }
 }

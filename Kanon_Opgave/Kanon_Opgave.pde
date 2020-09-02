@@ -2,21 +2,19 @@ import processing.sound.*;
 
 player theP;
 
-void setup(){
+void setup() {
   loadSounds();
-  size(1920,1080);
+  size(1920, 1080);
   rectMode(CENTER);
   theP = new player();
-  
 }
 
 
 
-void draw(){
-  theP.drawCanon();
-  theP.rotation();
+void draw() {
+  clear();
   theP.checkShoot();
-  
-  
+
+
   animations.runAnimations();
 }

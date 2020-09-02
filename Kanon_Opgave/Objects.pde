@@ -6,4 +6,7 @@ class objects {
   PVector acc = new PVector();
   
   animation cAnimation;
+  
+  void drawSelf() { 
+  }
 }
