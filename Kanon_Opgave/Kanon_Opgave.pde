@@ -1,7 +1,6 @@
 import processing.sound.*;
-planet myPlanet;
+
 player theP;
-balls ball;
 
 void setup() {
   loadSounds();
@@ -9,16 +8,20 @@ void setup() {
   rectMode(CENTER);
   imageMode(CENTER);
   theP = new player();
-  myPlanet = new planet();
+  makePlanets(4);
 }
 
 
 
 
-void draw(){
+void draw() {
   clear();
-  
-  theP.checkShoot();
 
   animations.runAnimations();
+}
+
+void mouseReleased() {
+  ballList.add(new balls(theP.shotEnergy));
+  theP.shotEnergy=0;
+  theP.energyDirec = abs(theP.energyDirec);
 }

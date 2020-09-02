@@ -3,8 +3,9 @@ class player extends objects {
   int cLength = 30;
   int cWidth = 8;
   int timerC;
-  boolean press=false;
-
+  float shotEnergy = 0;
+  float energyDirec = 0.6;
+  int maxEnergy = 50;
 
   player() {
     pos.x = 50;
@@ -13,31 +14,29 @@ class player extends objects {
     objectList.add(this);
   }
   void drawSelf() {
+
     imageMode(CENTER);
     pushMatrix();
     translate(pos.x, pos.y);
-    angle = atan2(mouseY-pos.y,mouseX-pos.x);
+    angle = atan2(mouseY-pos.y, mouseX-pos.x);
     rotate(angle);
     cAnimation.animationStep();
     popMatrix();
+    checkHold();
   }
 
-  void checkShoot() {
+  void checkHold() {
     if (mousePressed) {
-      if (!press){
-        
-        shootCanon();
-        ballList.add(new balls());
-        press = true;
-        println(press);
+      shotEnergy += energyDirec;
+
+      if (shotEnergy >= maxEnergy || shotEnergy <= 0) {
+        energyDirec *= -1;
       }
-    }else{
-      press = false;
-      
+      fill(shotEnergy*255/maxEnergy, 255-(255*shotEnergy/maxEnergy), 0);
+      rect(pos.x+200, pos.y-200, shotEnergy*5, 20);
     }
-    
   }
-  
+
 
 
   void shootCanon() {
