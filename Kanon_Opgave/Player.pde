@@ -16,7 +16,7 @@ class player extends objects {
     imageMode(CENTER);
     pushMatrix();
     translate(pos.x, pos.y);
-    angle = atan2(mouseY-pos.y,mouseX-pos.x);
+    angle = atan2(mouseY-pos.y, mouseX-pos.x);
     rotate(angle);
     cAnimation.animationStep();
     popMatrix();
@@ -24,20 +24,18 @@ class player extends objects {
 
   void checkShoot() {
     if (mousePressed) {
-      if (!press){
-        
+      if (!press) {
+
         shootCanon();
         ballList.add(new balls());
         press = true;
         println(press);
       }
-    }else{
+    } else {
       press = false;
-      
     }
-    
   }
-  
+
 
 
   void shootCanon() {

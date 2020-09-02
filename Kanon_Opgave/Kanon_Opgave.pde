@@ -2,6 +2,7 @@ import processing.sound.*;
 planet myPlanet;
 player theP;
 balls ball;
+score score;
 
 void setup() {
   loadSounds();
@@ -10,6 +11,7 @@ void setup() {
   imageMode(CENTER);
   theP = new player();
   myPlanet = new planet();
+  score = new score();
 }
 
 
