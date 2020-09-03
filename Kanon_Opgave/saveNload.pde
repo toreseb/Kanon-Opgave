@@ -1,12 +1,9 @@
-creator myCreator;
+creator mapCreator = new creator();
 class creator {
-
-  void checkClose() {
-    if (keyPressed && key == ' ') {
-      saveData();
-    }
+  void checkMapChange() {
     if (keyPressed) {
       try {
+        println("tryin to load" + key);
         loadMap(Integer.parseInt(key+""));
         println("loaded " + key);
       } 
@@ -47,6 +44,8 @@ void saveData() {
 
 void loadMap(int mapN) {
   objectList.clear();
+  objectList.add(theP);
+  objectList.add(score);
   String[] mapData = loadStrings("map"+mapN+".txt");
   for (String i : mapData) {
     String type = "";

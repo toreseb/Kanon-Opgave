@@ -11,4 +11,11 @@ class objects {
 
   void drawSelf() {
   }
+
+  void sizeCheck() {
+    if (dist(mouseX, mouseY, pos.x, pos.y) < size/2) {
+      size += mouseWheel;
+      cAnimation.setSize(int(size), int(size));
+    }
+  }
 }

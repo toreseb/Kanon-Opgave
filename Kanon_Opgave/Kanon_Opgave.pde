@@ -12,15 +12,16 @@ void setup() {
   theP = new player();
   score = new score();
   makePlanets(5);
+  createRandomTargets(5);
 }
 
 
 
 
 void draw() {
+  mapCreator.checkMapChange();
   clear();
   displayBackdrop();
-
   animations.runAnimations();
 }
 

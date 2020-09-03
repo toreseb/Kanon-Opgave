@@ -39,6 +39,10 @@ class animation {
   void setFramePos(int getNewFrame) {
     cFrame = getNewFrame/frameTime;
   }
+  void setSize(int sizeX, int sizeY) {
+    size.x = sizeX;
+    size.y = sizeY;
+  }
 }
 
 class animationEngine {

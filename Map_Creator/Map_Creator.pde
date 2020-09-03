@@ -1,7 +1,7 @@
 ArrayList<String> text = new ArrayList<String>();
-creator myCreator;
-userInterface UI;
 
+userInterface UI;
+float mouseWheel;
 void setup() {
   size(1920, 1080);
   myCreator = new creator();
@@ -13,7 +13,9 @@ void draw() {
   clear();
   myCreator.checkClose();
   animations.runAnimations();
-
+  for (objects i : objectList) {
+    i.sizeCheck();
+  }
 
   UI.drawUI();
 }
@@ -33,4 +35,8 @@ void mouseReleased() {
     i.moving = false;
   }
   allreadyMoving = false;
+}
+
+void mouseWheel(MouseEvent event) {
+  mouseWheel = event.getCount();
 }
