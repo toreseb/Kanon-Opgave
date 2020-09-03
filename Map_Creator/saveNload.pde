@@ -24,6 +24,7 @@ void saveData() {
   }
 
   saveStrings("map"+fileN+".txt", saveText);
+  println("saved as: map" + fileN);
   exit();
 }
 
@@ -43,7 +44,7 @@ void loadAllData() {
 }
 
 void loadMap(int mapN) {
-
+  objectList.clear();
   String[] mapData = loadStrings("map"+mapN+".txt");
   for (String i : mapData) {
     if (i.charAt(0) == 'p') {

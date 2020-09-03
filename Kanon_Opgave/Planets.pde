@@ -2,16 +2,16 @@ ArrayList<planet> planetList = new ArrayList<planet>();
 
 void makePlanets(int amount) {
   for (int i= 0; i < amount; i ++) {
-    planetList.add(new planet());
+    planetList.add(new planet(random(40,width-60),random(60,height-60),random(40,50)));
   }
 }
 class planet extends solids {
   float size;
 
-  planet() {
-    this.size = random(30, 70);
-    this.pos.x = random(400, width);
-    this.pos.y = random(200, height-200);
+  planet(float getX, float getY, float getSize) {
+    this.size = getSize;
+    this.pos.x = getX;
+    this.pos.y = getY;
     this.cAnimation = new animation("planet", "png", 1, 1, pos.x, pos.y, int(size), int(size));
     objectList.add(this);
   }

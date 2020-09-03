@@ -1,4 +1,6 @@
 class planet extends objects {
+  
+
   planet(float getX, float getY, float getSize) {
     this.dataName = "p";
     this.pos.x = getX;
@@ -9,6 +11,16 @@ class planet extends objects {
   }
 
   void drawSelf() {
-    cAnimation.animationStep();
+    if (dist(mouseX, mouseY, pos.x, pos.y) < size && mousePressed) {
+      moving = true;
+      cAnimation.setPosition(pos);
+    }
+    if (moving) {
+      pos.x = mouseX;
+      pos.y = mouseY;
+      cAnimation.setPosition(pos);
+    }
+
+   cAnimation.animationStep();
   }
 }

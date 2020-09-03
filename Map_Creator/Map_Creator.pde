@@ -6,6 +6,7 @@ void setup() {
 }
 
 void draw() {
+  clear();
   myCreator.checkClose();
   animations.runAnimations();
 }
@@ -13,5 +14,12 @@ void draw() {
 
 void mouseClicked() {
   new planet(mouseX,mouseY,50);
+  
+}
+
+void mouseReleased() {
+  for (objects i: objectList) {
+    i.moving = false;
+  }
   
 }
