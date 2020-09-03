@@ -46,6 +46,7 @@ void loadMap(int mapN) {
   objectList.clear();
   objectList.add(theP);
   objectList.add(score);
+  score.timer = score.timeAmount;
   String[] mapData = loadStrings("map"+mapN+".txt");
   for (String i : mapData) {
     String type = "";

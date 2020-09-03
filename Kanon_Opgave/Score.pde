@@ -1,6 +1,5 @@
 class score extends objects {
   int timeAmount = 60;
-  int scoreValue;
   int scoreAmount;
   int timer;
 

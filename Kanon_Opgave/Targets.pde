@@ -9,9 +9,17 @@ class target extends objects {
   }
 
   void drawSelf() {
-    
-    
-    
+    for (objects i : objectList) {
+      if (i.dataName != "ball") {
+        continue;
+      }
+      if (dist(i.pos.x, i.pos.y, pos.x, pos.y) < size/2) {
+        score.scoreAmount ++;
+        removeList.add(this);
+      }
+    }
+
+
     cAnimation.animationStep();
   }
 }

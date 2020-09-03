@@ -23,10 +23,11 @@ void draw() {
   clear();
   displayBackdrop();
   animations.runAnimations();
+  cleanUp();
 }
 
 void mouseReleased() {
-  ballList.add(new balls(theP.shotEnergy));
+  new balls(theP.shotEnergy);
   theP.shotEnergy=0;
   theP.energyDirec = abs(theP.energyDirec);
 }

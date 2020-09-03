@@ -1,5 +1,8 @@
 ArrayList<objects> objectList = new ArrayList<objects>();
+ArrayList<objects> removeList = new ArrayList<objects>();
 ArrayList<balls> ballList = new ArrayList<balls>();
+
+
 class objects {
   String dataName = "NO DATANAME PLZ FIX";
   float size;
@@ -10,4 +13,12 @@ class objects {
   
   void drawSelf() { 
   }
+}
+
+
+void cleanUp() {
+  for (objects i: removeList) {
+    objectList.remove(i);
+  }
+  
 }
