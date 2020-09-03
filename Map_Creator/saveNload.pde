@@ -28,55 +28,44 @@ void saveData() {
   exit();
 }
 
-void loadAllData() {
-  int fileN = 0;
-  String[] mapData = loadStrings("map"+fileN+".txt");
-  try {
-    for (String i : mapData) {
-      print(i);
-    }
-    println();
-    fileN ++;
-  } 
-  catch (Exception e) {
-    println("It Dont Exist");
-  }
-}
-
 void loadMap(int mapN) {
   objectList.clear();
   String[] mapData = loadStrings("map"+mapN+".txt");
   for (String i : mapData) {
-    if (i.charAt(0) == 'p') {
-      String type = "";
-      String getXS = "";
-      String getYS = "";
-      String getSizeS = "";
-      int l=0;
-      while (i.charAt(l) != ',') {
-        type += i.charAt(l);
-        l++;
-      }
+    String type = "";
+    String getXS = "";
+    String getYS = "";
+    String getSizeS = "";
+    int l=0;
+    while (i.charAt(l) != ',') {
+      type += i.charAt(l);
       l++;
-      while (i.charAt(l) != ',') {
-        getXS += i.charAt(l);
-        l++;
-      }
+    }
+    println(type);
+    l++;
+    while (i.charAt(l) != ',') {
+      getXS += i.charAt(l);
       l++;
-      while (i.charAt(l) != ',') {
-        getYS += i.charAt(l);
-        l++;
-      }
+    }
+    l++;
+    while (i.charAt(l) != ',') {
+      getYS += i.charAt(l);
       l++;
-      while (l != i.length()) {
-        getSizeS += i.charAt(l);
-        l++;
-      }
+    }
+    l++;
+    while (l != i.length()) {
+      getSizeS += i.charAt(l);
       l++;
-      float getX = Float.parseFloat(getXS);
-      float getY = Float.parseFloat(getYS);
-      float getSize = Float.parseFloat(getSizeS);
+    }
+    l++;
+    float getX = Float.parseFloat(getXS);
+    float getY = Float.parseFloat(getYS);
+    float getSize = Float.parseFloat(getSizeS);
+    if (type.equals("planet")) {
       new planet(getX, getY, getSize);
+    }
+    if (type.equals("target")) {
+      new target(getX, getY, getSize);
     }
   }
 }

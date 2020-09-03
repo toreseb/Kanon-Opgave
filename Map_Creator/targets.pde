@@ -1,12 +1,12 @@
-class planet extends objects {
+class target extends objects {
 
 
-  planet(float getX, float getY, float getSize) {
-    this.dataName = "planet";
+  target(float getX, float getY, float getSize) {
+    this.dataName = "target";
     this.pos.x = getX;
     this.pos.y = getY;
     this.size = getSize;
-    this.cAnimation = new animation("planet", "png", 1, 1, pos.x, pos.y, int(size), int(size));
+    this.cAnimation = new animation("target", "png", 1, 1, pos.x, pos.y, int(size), int(size));
     objectList.add(this);
   }
 
@@ -21,9 +21,6 @@ class planet extends objects {
       pos.y = mouseY;
       cAnimation.setPosition(pos);
     }
-    noStroke();
-    fill(120, 120, 255, 100);
-    ellipse(pos.x, pos.y, 5*size, 5*size);
     cAnimation.animationStep();
   }
 }
