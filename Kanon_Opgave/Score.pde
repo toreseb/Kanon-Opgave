@@ -1,30 +1,36 @@
-class score extends objects {
-  int timeAmount = 60;
-  int scoreAmount;
-  int timer;
+class score {
+  float timeAmount = 31.0;
+  int scoreAmount = 0;
+  float timer;
+  PVector pos = new PVector();
 
   score() {
     pos.x = 20;
     pos.y = 20;
-    scoreAmount = 0;
-    timer = 60;
-    objectList.add(this);
+    timer = timeAmount;
   }
 
-  void drawSelf() {
-    
-    fill(255,255);
-    score.countdown();
+  void runScore() {
+    timer -= 1.0/60.0;
+    fill(255, 255);
     textSize(12);
     text("you have "+scoreAmount+" points", pos.x, pos.y);
-    text(timer + " seconds left",pos.x,pos.y*2);
-  }
-  void countdown(){
-    timer = timeAmount - frameCount/60;
-    if (timer <= 0){
-      timer = 0; 
+    text(int(timer) + " seconds left", pos.x, pos.y*2);
+
+    if (timer <= 0) {
       textSize(100);
-      text("You got "+scoreAmount+" points, good job!",250,height/2);
+      String text = ", good job!";
+      if (currentMap == maxMaps) {
+        text = ", game over";
+        timer = 0;
+      }
+      text("You got "+scoreAmount+" points" + text, 250, height/2);
+      moveBalls = false;
+    }
+    if (timer < -3 && currentMap != maxMaps) {
+      currentMap ++;
+      loadMap(currentMap);
     }
   }
+ 
 }

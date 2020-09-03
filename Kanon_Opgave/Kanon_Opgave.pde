@@ -1,5 +1,6 @@
 import processing.sound.*;
-
+int currentMap = 0;
+int maxMaps;
 player theP;
 score score;
 
@@ -11,8 +12,8 @@ void setup() {
   imageMode(CENTER);
   theP = new player();
   score = new score();
-  makePlanets(5);
-  createRandomTargets(5);
+  loadMap(currentMap);
+  maxMaps = getMaxMaps();
 }
 
 
@@ -24,6 +25,7 @@ void draw() {
   displayBackdrop();
   animations.runAnimations();
   cleanUp();
+  score.runScore();
 }
 
 void mouseReleased() {

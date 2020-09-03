@@ -5,7 +5,7 @@ class player extends objects {
   int timerC;
   float shotEnergy = 0;
   float energyDirec = 0.6;
-  int maxEnergy = 50;
+  int maxEnergy = 80;
 
   player() {
     pos.x = 50;

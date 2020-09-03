@@ -1,3 +1,5 @@
+boolean moveBalls = true;
+
 class balls extends objects {
   balls(float energy) {
     dataName = "ball";
@@ -14,10 +16,11 @@ class balls extends objects {
 
 
   void drawSelf() {
-    vel.add(acc);
-    acc.mult(0);
-    pos.add(vel);
-
+    if (moveBalls) {
+      vel.add(acc);
+      acc.mult(0);
+      pos.add(vel);
+    }
     pushMatrix();
     translate(pos.x, pos.y);
     rotate(vel.heading());

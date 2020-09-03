@@ -1,18 +1,40 @@
 creator mapCreator = new creator();
 class creator {
   void checkMapChange() {
-    if (keyPressed) {
-      try {
-        println("tryin to load" + key);
-        loadMap(Integer.parseInt(key+""));
-        println("loaded " + key);
-      } 
-      catch(Exception e) {
-        println("Failed to load " + key);
-      }
-    }
+    /* if (keyPressed) {
+     try {
+     println("tryin to load" + key);
+     loadMap(Integer.parseInt(key+""));
+     println("loaded " + key);
+     } 
+     catch(Exception e) {
+     println("Failed to load " + key);
+     }
+     }*/
   }
 }
+
+int getMaxMaps() {
+  int fileN = 0;
+  boolean stillSearch = true;
+  //TEST FILE AMOUNT
+  while (stillSearch) {
+    String[] mapData = loadStrings("map"+fileN+".txt");
+    try {
+      for (String i : mapData) {
+        print(i);
+      }
+      println();
+      fileN ++;
+    } 
+    catch (Exception e) {
+      stillSearch =false;
+    }
+  }
+  return fileN-1;
+}
+
+
 
 void saveData() {
   int fileN = 0;
@@ -45,7 +67,7 @@ void saveData() {
 void loadMap(int mapN) {
   objectList.clear();
   objectList.add(theP);
-  objectList.add(score);
+  moveBalls = true;
   score.timer = score.timeAmount;
   String[] mapData = loadStrings("map"+mapN+".txt");
   for (String i : mapData) {
@@ -58,7 +80,6 @@ void loadMap(int mapN) {
       type += i.charAt(l);
       l++;
     }
-    println(type);
     l++;
     while (i.charAt(l) != ',') {
       getXS += i.charAt(l);
