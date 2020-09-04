@@ -20,10 +20,10 @@ class userInterface {
     stroke(255, 0, 0);
     strokeWeight(10);
     if (placer == "planet") {
-      circle(300, 60, 100);
+      ellipse(300, 60, 100, 100);
     }
     if (placer == "target") {
-      circle(450, 60, 100);
+      ellipse(450, 60, 100, 100);
     }
   }
 

@@ -4,7 +4,7 @@ class player extends objects {
   int cWidth = 8;
   int timerC;
   float shotEnergy = 0;
-  float energyDirec = 0.6;
+  float energyDirec = 1;
   int maxEnergy = 80;
 
   player() {

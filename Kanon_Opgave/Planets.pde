@@ -2,7 +2,7 @@ ArrayList<planet> planetList = new ArrayList<planet>();
 
 void makePlanets(int amount) {
   for (int i= 0; i < amount; i ++) {
-    planetList.add(new planet(random(40,width-60),random(60,height-60),random(40,70)));
+    planetList.add(new planet(random(40, width-60), random(60, height-60), random(40, 70)));
   }
 }
 class planet extends solids {
@@ -25,6 +25,11 @@ class planet extends solids {
         i.acc.add(force);
       }
     }
+    for (balls i : ballList) {
+      if (dist(i.pos.x, i.pos.y, pos.x, pos.y) < size/2)   
+        removeList.add(i);
+    }
+
     fill(120, 120, 255, 100);
     ellipse(pos.x, pos.y, 5*size, 5*size);
     cAnimation.animationStep();

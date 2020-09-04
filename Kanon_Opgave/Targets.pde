@@ -6,6 +6,7 @@ class target extends objects {
     this.size = getSize;
     this.cAnimation = new animation("target", "png", 1, 1, pos.x, pos.y, int(size), int(size));
     objectList.add(this);
+    targetList.add(this);
   }
 
   void drawSelf() {
@@ -16,6 +17,7 @@ class target extends objects {
       if (dist(i.pos.x, i.pos.y, pos.x, pos.y) < size/2) {
         score.scoreAmount ++;
         removeList.add(this);
+        targetList.remove(this);
       }
     }
 
