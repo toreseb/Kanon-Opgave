@@ -10,7 +10,7 @@ class player extends objects {
   player() {
     pos.x = 50;
     pos.y = height/2;
-    this.cAnimation = new animation("kanon", "png", 1, 1, 0, 0, 700, 300);
+    this.cAnimation = new animation("kanon", "png", 1, 1, 0, 0, 700, 400);
     objectList.add(this);
   }
   void drawSelf() {
