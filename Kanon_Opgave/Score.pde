@@ -14,7 +14,7 @@ class score {
     if (changeMapIn != 2){
       changeMapIn -= 1.0/60.0;
     }
-    timer -= 1.0/120.0;
+    timer -= 1.0/60.0;
     fill(255, 255);
     textSize(12);
     text("you have "+scoreAmount+" points", pos.x, pos.y);
